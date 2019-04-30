@@ -4,14 +4,6 @@ import GalleryItem from './GalleryItem';
 import NotFound from './NotFound';
 
 const Gallery = ({ photoData, match, handleFetch, q }) => {
-  // if (match.params.query && match.params.query !== q) {
-  //   console.log(match.params.query, ' is the query before call');
-  //   handleFetch('taco');
-  //   console.log(q, ' is the params after call');
-  // } else {
-  //   handleFetch('dog');
-  // }
-  console.log(photoData);
   let photoList = [''];
   if (photoData.length > 0) {
     photoList = photoData.map(photo => (

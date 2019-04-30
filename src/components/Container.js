@@ -1,51 +1,19 @@
 import React, { Component } from 'react';
 
-import config from './config';
-import Header from './Header';
 import Gallery from './Gallery';
 
 class Container extends Component {
-  state = {
-    query: '',
-    photos: [],
-    loading: true
-  };
-  apiKey = config.api;
-
-  componentDidMount() {
-    console.log(this.props.query);
-    if (this.props.query) {
-      this.handleFetch(this.props.query);
-    } else {
-      this.handleFetch(this.props.match.params.searchQuery);
-    }
+  componentDidMount(q = this.props.query) {
+    this.props.handleFetch(q);
   }
-
-  handleFetch = q => {
-    fetch(
-      `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${
-        this.apiKey
-      }&tags=${q}&per_page=12&format=json&nojsoncallback=1`
-    )
-      .then(res => res.json())
-      .then(res =>
-        this.setState({
-          query: q,
-          photos: res.photos.photo,
-          loading: false
-        })
-      )
-      .catch(err => console.log('Unable to fetch image', err));
-  };
 
   render() {
     return (
       <div className="container">
-        <Header handleFetch={this.handleFetch} />
-        {this.state.loading ? (
-          <p>Loading...</p>
+        {this.props.loading ? (
+          <p className="loading">Loading...</p>
         ) : (
-          <Gallery photoData={this.state.photos} />
+          <Gallery photoData={this.props.photoData} />
         )}
       </div>
     );

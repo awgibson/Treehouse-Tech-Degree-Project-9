@@ -2,6 +2,7 @@ body {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   color: #3f4850;
+  background: #d7dbe6;
 }
 
 h2 {
@@ -50,7 +51,8 @@ input {
   margin-bottom: 1em;
 }
 
-.main-nav a {
+.main-nav a,
+.home-btn {
   display: block;
   background: #438bbd;
   border-radius: 3px;
@@ -60,8 +62,12 @@ input {
 
 .main-nav .active,
 .main-nav a:hover,
-.search-form button:hover {
+.search-form button:hover,
+.home-btn:hover {
   background-color: #275270;
+}
+.home-btn {
+  display: inline-block;
 }
 
 .photo-container ul {
@@ -93,7 +99,7 @@ input {
   width: 100%;
 }
 
-@media only screen and (max-width: 767px)  {
+@media only screen and (max-width: 767px) {
   body {
     padding-top: 2em;
   }
@@ -103,7 +109,7 @@ input {
   }
 }
 
-@media only screen and (min-width: 768px)  {
+@media only screen and (min-width: 768px) {
   body {
     padding-top: 4em;
   }
@@ -117,9 +123,16 @@ input {
     display: flex;
     justify-content: center;
   }
-  
+
   .main-nav li {
     margin: 10px;
     width: 100px;
   }
+}
+
+.loading {
+  margin-top: 30%;
+  font-weight: bold;
+  font-size: 5em;
+  transform: rotate(-30deg);
 }

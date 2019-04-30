@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 
-export default class Search extends Component {
+class Search extends Component {
   state = {
     searchText: ''
   };
@@ -11,7 +12,8 @@ export default class Search extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    window.location.pathname = `/search/${this.state.searchText}`;
+    this.props.handleFetch(this.state.searchText);
+    this.props.history.push('/search');
     e.currentTarget.reset();
   };
 
@@ -43,3 +45,5 @@ export default class Search extends Component {
     );
   }
 }
+
+export default withRouter(Search);
