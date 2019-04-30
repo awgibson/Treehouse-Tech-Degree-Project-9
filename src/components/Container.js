@@ -7,7 +7,8 @@ import Gallery from './Gallery';
 class Container extends Component {
   state = {
     query: '',
-    photos: []
+    photos: [],
+    loading: true
   };
   apiKey = config.api;
 
@@ -30,7 +31,8 @@ class Container extends Component {
       .then(res =>
         this.setState({
           query: q,
-          photos: res.photos.photo
+          photos: res.photos.photo,
+          loading: false
         })
       )
       .catch(err => console.log('Unable to fetch image', err));
@@ -40,7 +42,11 @@ class Container extends Component {
     return (
       <div className="container">
         <Header handleFetch={this.handleFetch} />
-        <Gallery photoData={this.state.photos} />
+        {this.state.loading ? (
+          <p>Loading...</p>
+        ) : (
+          <Gallery photoData={this.state.photos} />
+        )}
       </div>
     );
   }
