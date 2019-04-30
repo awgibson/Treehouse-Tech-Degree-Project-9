@@ -11,7 +11,7 @@ export default class Search extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.handleFetch(this.query.value);
+    window.location.pathname = `/search/${this.state.searchText}`;
     e.currentTarget.reset();
   };
 

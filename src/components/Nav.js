@@ -6,19 +6,13 @@ const Nav = ({ handleFetch, match }) => {
     <nav className="main-nav">
       <ul>
         <li>
-          <NavLink to={`/cats`} onClick={() => handleFetch('cats')}>
-            Cats
-          </NavLink>
+          <NavLink to={`/cats`}>Cats</NavLink>
         </li>
         <li>
-          <NavLink to={`/dogs`} onClick={() => handleFetch('dogs')}>
-            Dogs
-          </NavLink>
+          <NavLink to={`/mountains`}>Mountains</NavLink>
         </li>
         <li>
-          <NavLink to={`/computers`} onClick={() => handleFetch('computers')}>
-            Computers
-          </NavLink>
+          <NavLink to={`/coffee`}>Coffee</NavLink>
         </li>
       </ul>
     </nav>
