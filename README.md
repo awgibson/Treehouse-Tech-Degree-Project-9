@@ -1,3 +1,20 @@
+# Treehouse Tech Tegree Project 9
+## Build An Image Gallery With React and Flickr API
+You must have an API key obtained from Flickr.
+Create a config.js file and place it inside the components folder.
+
+```
+//API key config file
+
+const config = {
+  api: '{API Key goes here}'
+};
+
+export default config;
+
+```
+
+---
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
