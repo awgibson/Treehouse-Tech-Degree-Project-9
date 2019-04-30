@@ -1,4 +1,4 @@
-# Treehouse Tech Tegree Project 9
+# Treehouse Tech Degree Project 9
 ## Build An Image Gallery With React and Flickr API
 You must have an API key obtained from Flickr.
 Create a config.js file and place it inside the components folder.
