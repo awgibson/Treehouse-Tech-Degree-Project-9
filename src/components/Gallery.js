@@ -1,10 +1,19 @@
+//This component holds the image gallery
+
+//Bring in dependencies
 import React from 'react';
 
+//Bring in components
 import GalleryItem from './GalleryItem';
 import NotFound from './NotFound';
 
-const Gallery = ({ photoData, match, handleFetch, q }) => {
-  let photoList = [''];
+const Gallery = ({ photoData }) => {
+  let photoList = ['']; //Declare empty array
+
+  //Conditional checks if there are photos.
+  //If there are photos, the data is mapped to a GalleryItem component passing in the props
+  //needed to build the image URL.
+  //If there are no photos found, the Not Found component is loaded showing there are no results
   if (photoData.length > 0) {
     photoList = photoData.map(photo => (
       <GalleryItem
@@ -23,7 +32,8 @@ const Gallery = ({ photoData, match, handleFetch, q }) => {
   return (
     <div className="photo-container">
       <h2>Results</h2>
-      <ul>{photoList.length === 0 ? <h2>loading...</h2> : photoList}</ul>
+      {/* Displays either the photos or the not found component */}
+      <ul>{photoList}</ul>
     </div>
   );
 };

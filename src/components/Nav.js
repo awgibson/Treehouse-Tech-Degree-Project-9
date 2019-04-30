@@ -1,6 +1,8 @@
+//Bring in dependencies
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+//Clicking the buttons navigates to the appropriate url and uses the handleFetch to search on click
 const Nav = ({ handleFetch }) => {
   return (
     <nav className="main-nav">

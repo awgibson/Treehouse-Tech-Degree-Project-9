@@ -1,3 +1,6 @@
+//This component renders if an invalid URL is typed in.
+
+// Bring in dependencies
 import React from 'react';
 import { Link } from 'react-router-dom';
 

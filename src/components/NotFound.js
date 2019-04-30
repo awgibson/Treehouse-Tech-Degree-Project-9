@@ -1,3 +1,6 @@
+//This component displays a no results found page if no images are found
+
+//Bring in dependencies
 import React from 'react';
 
 const NotFound = () => {

@@ -1,20 +1,24 @@
+// Bring in dependencies
 import React, { Component } from 'react';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router'; //withRouter gives me access to the router history
 
 class Search extends Component {
+  //Local state for input
   state = {
     searchText: ''
   };
 
+  // Updates state while typing
   onChange = e => {
     this.setState({ searchText: e.target.value });
   };
 
+  //Handles submit
   handleSubmit = e => {
-    e.preventDefault();
-    this.props.handleFetch(this.state.searchText);
-    this.props.history.push('/search');
-    e.currentTarget.reset();
+    e.preventDefault(); //Prevents default browser actions
+    this.props.handleFetch(this.state.searchText); //Sends query to the data fetching method
+    this.props.history.push('/search'); //Changes address path to '/search'
+    e.currentTarget.reset(); //clears the input
   };
 
   render() {
@@ -46,4 +50,4 @@ class Search extends Component {
   }
 }
 
-export default withRouter(Search);
+export default withRouter(Search); //Since I'm using withRouter, the class component must be exported within the withRouter method
